@@ -6,9 +6,6 @@ st.title("Приложение")
 if "books" not in st.session_state:
     st.session_state.books = []
 
-# ===============================
-# ➕ Добавяне на книга
-# ===============================
 st.header("➕ Добави книга")
 title = st.text_input("Заглавие")
 author = st.text_input("Автор")
@@ -23,9 +20,6 @@ if st.button("Добави книгата"):
     st.session_state.books.append(book)
     st.success("Книгата е добавена!")
 
-# ===============================
-# Покажи всички книги
-# ===============================
 if st.button("Покажи всички книги"):
     if len(st.session_state.books) == 0:
         st.write("Няма добавени книги.")
@@ -36,9 +30,6 @@ if st.button("Покажи всички книги"):
             st.write("Цена:", book["price"])
             st.write("--------------------")
 
-# ===============================
-# 🔍 Търсене по автор
-# ===============================
 st.header("Търсене по автор")
 search_author = st.text_input("Въведи име на автор")
 
